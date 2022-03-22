@@ -2,6 +2,8 @@
 #1 - Escreva um algoritmo que imprima na tela: Olá Mundo!
 from cgitb import reset
 from dis import dis
+import math
+import numbers
 from unittest import result
 
 
@@ -264,3 +266,67 @@ def area():
 
 
 #22 - Escreva um programa que receba como entrada o raio de um círculo e imprima o diâmetro, a circunferência e a área. Para isso, utilize as fórmulas: diâmetro = 2r; circunferência = 2πr, área = πr².
+def printCircleCalcs():
+    r = float(input("Digite o raio: "))
+    diameter = r * 2;
+    circ = 2 * 3.14 * r
+    area = (3.14 *r) ** 2
+
+    print(f"O diâmetro é: {diameter}\nA circunferência é: {circ}\nA área é: {area}")
+
+#23 - Faça um programa que receba um número positivo e maior que zero, calcule e mostre:
+def mathCalcs():
+    number = 0
+
+    while number <= 0:
+        number = float(input("Digite um número maior que 0: "))
+        
+        if number > 0:
+            #o número digitado ao quadrado;
+            squareNumber = number ** 2
+            #o número digitado ao cubo;
+            cubedNumber = number ** 3
+            #a raiz quadrada do número digitado.
+            sqrtNumber = math.sqrt(number)
+
+            print(f"Número ao quadrado: {squareNumber}\nNúmero ao cubo: {cubedNumber}\nRaiz quadrada do número: {sqrtNumber}")
+
+#24 - Faça um programa que receba dois números maiores que zero, calcule e mostre um elevado ao outro.
+def elevatedNumbers():
+    num1 = 0
+    num2 = 0
+
+    while num1 <= 0 or num2 <= 0:
+        num1 = float(input("Digite o primeiro número maior que 0: "))
+        num2 = float(input("Digite o segundo número maior que 0: "))
+        
+        if num1 > 0 and num2 > 0:
+            result = num1 ** num2
+            print(f"O número {num1} elevado ao número {num2} é igual a: {result}")
+
+#25 - Sabe-se que: pé = 12 polegadas; 1 jarda = 3 pés e 1 milha = 1,760 jarda. Faça um programa que receba uma medida em pés, faça as conversões a seguir e mostre os resultados.
+def convertMetrics():
+    metric = float(input("Digite a medida em pés (Apenas números): "))
+
+    #polegadas;
+    pol = metric * 12
+
+    #jardas;
+    jar = round(metric / 3,2)
+
+    #milhas
+    mil = round(metric / 5280,5)
+
+    print(f"A conversão para polegadas resulta em: {pol}\nA conversão para jardas resulta em: {jar}\nA conversão para milhas resilta em: {mil}")
+
+#Escreva um programa que receba como entrada um número de 5 dígitos, separe o número em dígitos individuais e os imprima separados por 3 espaços cada um. Por exemplo, se o usuário digitar 42339, o programa deverá imprimir: 4 2 3 3. Dica: utilize as operações de divisão e módulo para extrair cada dígito do número.
+def print5DigitsNumber():
+    number = ""
+
+    while len(number) < 5:
+        number = input("Digite um número com 5 digitos (Apenas números): ")
+
+        if len(number) >= 5:
+            for i in range(len(number)):
+                print(number[i])
+print5DigitsNumber()
